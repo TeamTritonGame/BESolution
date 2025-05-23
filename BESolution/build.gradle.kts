@@ -70,6 +70,10 @@ tasks.processResources {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 
+tasks.jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
 
 application {
     mainClass.set("MainKt")

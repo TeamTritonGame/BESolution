@@ -4,14 +4,16 @@ import io.grpc.stub.StreamObserver
 import org.david.grpc.DataServiceGrpc.DataServiceImplBase
 
 class DataService: DataServiceImplBase() {
-//    override fun getData(request: DataRequest): DataResponse {
-//        return DataResponse.newBuilder().setMessage("Hello ${request.name}").build()
-//    }
 
     override fun saveInventory(
         request: SaveInventoryRequest?,
-        responseObserver: StreamObserver<SaveInventoryResponse>?
-    ) {
+        responseObserver: StreamObserver<SaveInventoryResponse>?)
+    {
+        responseObserver!!.onNext(request?.let { processSaveInventory(it) })
+        responseObserver.onCompleted()
+    }
 
+    private fun processSaveInventory(request: SaveInventoryRequest): SaveInventoryResponse {
+        return SaveInventoryResponse.newBuilder().build()
     }
 }

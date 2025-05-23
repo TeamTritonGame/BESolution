@@ -1,17 +1,17 @@
 syntax = "proto3";
 
+package david;
 
 option java_multiple_files = true;
 option java_package="org.david.grpc";
 option java_outer_classname="data";
-option java_generic_services=true;
 
 service DataService{
-  rpc SaveInventory(SaveInventoryRequest) returns (SaveInventoryResponse);
+  rpc SaveInventory(SaveInventoryRequest) returns (SaveInventoryResponse){}
 }
 
 message SaveInventoryRequest{
   string itemName=1;
-  string itemQuantity=2;
+  int32 itemQuantity=2;
 }
 message SaveInventoryResponse{}
