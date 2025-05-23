@@ -66,6 +66,11 @@ sourceSets {
     }
 }
 
+tasks.processResources {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+
 application {
-    mainClass.set("com.example.MainKt")
+    mainClass.set("MainKt")
 }
