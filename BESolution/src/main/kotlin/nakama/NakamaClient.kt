@@ -19,11 +19,11 @@ object NakamaClient {
         try {
             session = defaultSession.get()
         } catch (e: CancellationException) {
-            println("Exception: $e")
+            println("CancellationException  : $e")
         } catch (e: ExecutionException){
-            println("Exception: $e")
+            println("ExecutionException: $e")
         } catch (e: InterruptedException) {
-            println("Exception: $e")
+            println("InterruptedException: $e")
         }
 
         return session!!
